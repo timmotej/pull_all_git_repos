@@ -3,6 +3,7 @@
 import sys
 import os
 
+# add root file for git repos
 def spider_dir_tree():
 	#go to git dir
 	#list dir
