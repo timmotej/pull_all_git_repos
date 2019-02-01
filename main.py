@@ -13,7 +13,6 @@ def root_path(to_item):
 	items = (it for k,it in enumerate(list_to_cut) if to_item in list_to_cut[k:])
 	return "/".join(list(items))
 
-print(root_path("git"))
 
 # traverse root directory, and list directories as dirs and files as files
 def walk_dir(path_root):
@@ -30,7 +29,6 @@ def main(list_a):
 	no_failures = 0
 	path_fail = []
 	list_a = [i[:-1] for i in list_a if i[-1] == ".git"  ]
-	print(list_a)
 	for path_a in list_a:
 		try:
 			git_pull_request(path_a)
