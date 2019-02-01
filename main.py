@@ -4,6 +4,17 @@ import sys
 import os
 import git
 
+# add root file for git repos
+def spider_dir_tree():
+	return os.getcwd().split("/")[:]
+
+def root_path(to_item):
+	list_to_cut = spider_dir_tree()
+	items = (it for k,it in enumerate(list_to_cut) if to_item in list_to_cut[k:])
+	return "/".join(list(items))
+
+print(root_path("git"))
+
 # traverse root directory, and list directories as dirs and files as files
 def walk_dir(path_root):
     return [ root.split(os.sep) for root, dirs, files in os.walk(path_root) ]
@@ -32,6 +43,6 @@ def main(list_a):
 	#spider_dir_tree(git_pull_request())
 
 if __name__ == "__main__":
-	walk_dir(sys.argv[1])
-	main(walk_dir(sys.argv[1]))
+	walk_dir(root_path(sys.argv[1]))
+	main(walk_dir(root_path(sys.argv[1])))
 	
