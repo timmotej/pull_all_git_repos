@@ -1,4 +1,4 @@
-## Pull git repos automatically included in __directory__ 
+## Pull git repos automatically 
 
 ### Requirements
 
