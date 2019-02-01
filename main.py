@@ -37,7 +37,7 @@ def main(list_a):
 			path_fail.append(path_a)
 			print("git pull origin master for","/".join(path_a),"was unsuccessful.")
 			pass
-	print(no_failures,"of failures to pull:\n","\n".join("/".join(i) for i in path_fail))
+	print("Failures to pull:",no_failures,":\n","\n".join("/".join(i) for i in path_fail))
 	#spider_dir_tree(git_pull_request())
 
 if __name__ == "__main__":
